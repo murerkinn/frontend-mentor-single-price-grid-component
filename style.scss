@@ -1,0 +1,172 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+/* Variables */
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+/* Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-gray;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Component */
+.component {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 0.6em;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "top top"
+    "left right";
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: unset;
+    grid-template-areas:
+      "top"
+      "left"
+      "right";
+  }
+
+  color: #fefefe;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* Top */
+.top {
+  padding: 3em;
+  border-radius: 0.6em 0.6em 0 0;
+  background-color: #fefefe;
+  grid-area: top;
+
+  .title {
+    color: $cyan;
+    font-size: 1.7rem;
+    margin-bottom: 1em;
+  }
+
+  .subtitle {
+    color: $bright-yellow;
+  }
+
+  p {
+    color: $grayish-blue;
+    font-size: 18px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 1.3em 2em;
+  }
+}
+
+.subtitle {
+  margin-bottom: 1em;
+}
+
+/* Left */
+.left {
+  padding: 2em 3em;
+  background-color: $cyan;
+  grid-area: left;
+  border-radius: 0 0 0 0.6em;
+
+  @media only screen and (max-width: 600px) {
+    border-radius: unset;
+    padding: 1.3em 2em;
+  }
+}
+
+/* Right */
+.right {
+  padding: 2em 3em;
+  background-color: #4abebd;
+  grid-area: right;
+  border-radius: 0 0 0.6em 0;
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 0 0 0.6em 0.6em;
+    padding: 1.3em 2em;
+  }
+
+  .features {
+    margin-bottom: 0.6em;
+  }
+
+  .feature {
+    line-height: 23px;
+    font-size: 17px;
+    opacity: 0.8;
+  }
+}
+
+/* Button */
+.btn {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100%;
+  background-color: $bright-yellow;
+  color: #fefefe;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8em 0;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 1em 0 0.6em 0;
+  transition: all 170ms ease-in-out;
+
+  &:hover {
+    transform: translateY(3px);
+    box-shadow: unset;
+  }
+}
+
+.price {
+  margin-bottom: 0.5em;
+
+  span {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-right: 0.2em;
+  }
+}
+
+/* Footer */
+footer {
+  max-width: 90%;
+  position: absolute;
+  bottom: 10px;
+  color: #131313;
+  text-align: center;
+
+  a {
+    color: $cyan;
+    font-weight: 700;
+  }
+}
